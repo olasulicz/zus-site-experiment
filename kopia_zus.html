@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]><html lang="pl" data-js-m="high-contrast" class="aui ltr js-mod  no-js ie ie8"><![endif]-->
+<!--[if IE 9]><html lang="pl" data-js-m="high-contrast" class="aui ltr js-mod  no-js ie ie9"><![endif]-->
+
+<!-- [if gt IE 9] <!-->
+<html lang="pl" data-js-m="high-contrast" id="high-contrast" class="aui ltr js-mod  no-js">
+<!-- <![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="/portal/wcag/img/favicon.ico" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PORTAL ZUSNPI - LOGOWANIE I REJESTRACJA</title>
+<link href="/portal/wcag/css/custom-main.css?ts=221027162426" rel="stylesheet" type="text/css">
+<link href="/portal/szafirsdk_web/szafirsdk-styles.css?ts=221027162426" rel="stylesheet" type="text/css">
+<script src="/portal/js/common/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="/portal/szafirsdk_web/szafirsdk-module.js?ts=221027162426" type="text/javascript"></script>
+<script src="/portal/wcag/js/utils.js?ts=221027162426" type="text/javascript"></script>
+<script src="/portal/js/riu/riu.js?ts=221027162426" type="text/javascript"></script>
+<script src="/portal/js/riu/riuJezyk.js?ts=221027162426" type="text/javascript"></script>
+<script src="/portal/js/riu/riuPodpis.js?ts=221027162426" type="text/javascript"></script>
+<script type="text/javascript" >
+    window.SZAFIR_SDK.config({
+		debug: false,
+		sdk_location_url: "/portal/podpis/lib/"
+    });	
+</script>
+</head>
+<body data-szafirsdk-ready="yes" data-js-m="font-resizer" id="font-resizer" class="js-mod fontresizer cookies-info">
+
+    <div class="zus">
+        <div class="l-full">
+
+
+<div id="header" class="l-full-row portlet-custom zus-header zus-pue-header">
+    <div class="l-row">
+        <div class="b-row b-collapse-both">
+            <div class="b-column twelve">
+                <div class="header__part-1--logo"><a href="https://www.zus.pl/"><img src="/portal/wcag/img/logo.png" alt="Zakład Ubezpieczeń Społecznych"></a></div>
+                <div class="zus-header__title zus-header__title-wcag">
+                    <p class="zus-header__title--text zus-header__title--text-wcag g-no-padding g-left">
+                        <span>Zakład Ubezpieczeń Społecznych</span>
+                    </p>
+                    <a class="zus-header__title--logo-wcag g-left" href="https://www.zus.pl/pue">
+                        <img src="/portal/wcag/img/pue.png" alt="Platforma Usług Elektronicznych" class="zus-header__title-normal">
+                        <img src="/portal/wcag/img/pue-contrast.png" alt="Platforma Usług Elektronicznych" class="zus-header__title-contrast">
+                    </a>
+                </div>
+                <ul class="zus-list-horizontal g-right zus-header__list">
+                    <li class="zus-header__register small-hide"><a href="https://www.zus.pl/pue/rejestracja"><span>Zarejestruj w <abbr title="Platforma Usług Elektronicznych">PUE</abbr></span></a></li>
+                    <li class="zus-header__login small-hide"><a href="https://www.zus.pl/pue"><span>Zaloguj do <abbr title="Platforma Usług Elektronicznych">PUE</abbr></span></a></li>
+                    <li class="zus-header__tools-contrast medium-hide small-hide"><a href="javascript:void(0);" onclick="javascript: riuJezyk.przelacz();"><span id="riuJezykZmienLabel"></span><img id="riuJezykZmienImg" style="padding-left: 5px; width: 16px; height: 16px;"/></a></li>
+                    <li class="zus-header__tools-fonts medium-hide small-hide">
+                        <ul class="zus-list-horizontal">
+                            <li><a href="#" title="Mniejsza czcionka" class="fresizer-link fresizer-smaller"><span aria-hidden="true">A</span><span class="acc-hide">Mniejsza czcionka</span></a></li>
+                            <li><a href="#" title="Większa czcionka" class="fresizer-link fresizer-bigger"><span aria-hidden="true">A</span><span class="acc-hide">Większa czcionka</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="zus-header__tools-contrast medium-hide small-hide"><a href="#" id='highContrastMode' title="Tryb wysokiego kontrastu" class="b-icon-only-eye"><span class="acc-hide">Tryb wysokiego kontrastu</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+  riuJezyk.inicjalizuj( 
+    'pl' );
+
+</script>
+
+            <div id="main-content" role="main" class="layout-custom column-12-layout-custom">
+                <div class="portlet-layout layout-row">
+                    <div class="layout-wrapper shadow-top">
+                        <div class="l-row">
+                            <div class="b-row b-collapse-both">
+                                <div id="column-3" class="b-column twelve portlet-column">
+<form id="loginEpuapForm" method="post"></form>
+<form id="rejestracjaEpuapForm" method="post"></form>
+
+<div class="portlet-custom">
+	
+	<h1>Logowanie</h1>
+
+	<div class="b-row">
+
+		<div class="b-column three"></div>
+
+		<div class="b-column six medium-twelve small-twelve portlet-column">
+
+			<div
+				class="portlet-custom zus-login-box zus-login-box-horizontal b-row">
+				<div class="login-box__part-1 green1-bg b-column six small-twelve">
+
+					<h2 class="login-box__heading">Zaloguj do PUE</h2>
+
+					<form id="formularz" name="formularz" data-js-m="validation"
+						class="js-mod" method="POST"
+						action="/portal/riu/riuZalogujLoginHaslo.npi">
+
+                                                <input type="hidden" id="riuZalogujJezykKod" name="jezyk" value="pl">
+
+						<label for="loginId-fake" class="g-hide">&nbsp;</label> <input
+							id="loginId-fake" type="text" class="g-hide" name="login-fake"
+							autocomplete="off" /> <label for="hasloId-fake" class="g-hide">&nbsp;</label>
+						<input id="hasloId-fake" type="password" class="g-hide"
+							name="haslo-fake" autocomplete="off" />
+
+						<div class="f-row f-row-first">
+							<label for="riuLogin" class="f-label g-no-margin">Login</label> <input
+								type="text" id="riuLogin" name="login"
+								class="login-box__input required" autocomplete="off">
+							<div id="riuLogin--required"
+								class="msg error b-v-error hide-checked-valid-separate">Ta wartość jest wymagana.</div>
+						</div>
+						<div class="f-row">
+							<label for="riuHaslo" class="f-label g-no-margin">Hasło</label>
+							<input type="password" id="riuHaslo" name="haslo"
+								class="login-box__input required" autocomplete="off">
+							<div id="riuHaslo--required"
+								class="msg error b-v-error hide-checked-valid-separate">Ta wartość jest wymagana.</div>
+						</div>
+						<div class="f-row g-no-padding">
+						</div>
+						<div class="f-row f-buttons">
+							<button type="submit"
+								class="o-btn btn-orange login-box__button g-no-margin">
+								<span style="font-weight: bold;">Zaloguj</span>
+							</button>
+						</div>
+						<div class="f-row f-row-last">
+							<p>
+								<a
+									href="/portal/przypomnienie-hasla.npi"
+									class="b-icon-before-arrow-right-xsmall">Nie pamiętasz hasła?</a>
+							</p>
+						</div>
+					</form>
+				</div>
+				<div class="login-box__part-2 b-column six small-twelve">
+					<ul class="b-transparent-list">
+						<li>
+                            <a href="/portal/riu/logowanie-wezlem-krajowym.npi" class="login-box__link b-icon-before-block-card">
+                                <span class="b-icon-block-xsmall-arrow-right">Zaloguj przez profil zaufany/login.gov.pl</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/portal/logowanie-certyfikatem.npi" class="login-box__link b-icon-before-block-padlock">
+                                <span class="b-icon-block-xsmall-arrow-right">Zaloguj przez kwalifikowany podpis elektroniczny</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/portal/logowanie-ssobp.npi" class="login-box__link b-icon-before-block-bank-account">
+                                <span class="b-icon-block-xsmall-arrow-right">Zaloguj przez bankowość elektroniczną</span>
+                            </a>
+                        </li>
+                        <!--
+						<li>
+							<a href="/portal/riu/logowanie-wezlem-krajowym.npi" class="login-box__link b-icon-before-block-login">
+								<span class="b-icon-block-xsmall-arrow-right">Zaloguj przez login.gov.pl</span>
+							</a>
+						</li>
+                        -->
+                        <li>
+                            <a href="https://www.zus.pl/pue/rejestracja" class="login-box__link b-icon-before-block-pue">Nie masz konta w PUE?<br>
+                                <span class="orange-c b-icon-before-xsmall-arrow-right">Zarejestruj się</span>
+                            </a>
+                        </li>
+					</ul>
+
+					<div class="login-box__count">
+						<p>
+Zarejestrowanych profili:								<span class="login-box__count-no" id="zus-pue-users-counter">-</span>
+						</p>
+						<script type="text/javascript" src="/Licznik/profilePUE.js"></script>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="b-column three"></div>
+	</div>
+</div>                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<div class="l-full-row zus-footer portlet-custom" role="contentinfo" id="zus-footer">
+	<div class="l-row first-footer">
+		<div class="b-row b-table-row">
+			<div class="b-column two medium-four small-twelve g-text-top">
+								<ul class="zus-list">
+										<li>
+						<a class="b-icon-before-xsmall-arrow-right strong" href="https://www.zus.pl/portal/pomoc">
+							<span>Pomoc</span>
+						</a>
+					</li>
+										<li>
+						<a class="b-icon-before-xsmall-arrow-right strong" href="https://www.zus.pl/pue/regulamin">
+							<span>Regulamin</span>
+						</a>
+					</li>
+										<li>
+						<a class="b-icon-before-xsmall-arrow-right strong" href="https://www.zus.pl/mapa-serwisu">
+							<span>Mapa serwisu</span>
+						</a>
+					</li>
+									</ul>
+							</div>
+			<div class="b-column four medium-six small-twelve g-text-bottom">
+				<div class="b-column twelve">
+					<p>Projekt jest współfinansowany przez Unię Europejską z Europejskiego Funduszu Rozwoju Regionalnego</p>
+				</div>
+			</div>
+			<div class="b-column six medium-twelve small-twelve g-text-bottom">
+								<ul class="zus-list-horizontal zus-footer__list">
+										<li>
+						<a class="b-icon-before-xxxlarge-ue-strategy strong" ></a>
+						
+					</li>
+										<li>
+						<a class="b-icon-before-xxxlarge-pue-ue strong" ></a>
+						
+					</li>
+										<li>
+						<a class="b-icon-before-xxxlarge-zus strong" ></a>
+						
+					</li>
+										<li>
+						<a class="b-icon-before-xxxlarge-ue strong" ></a>
+						
+					</li>
+									</ul>
+							</div>
+		</div>
+	</div>
+
+	<div class="l-row">
+		<div class="b-row b-collapse-both">
+			<div class="b-column twelve">
+				<hr>
+			</div>
+		</div>
+	</div>
+
+	<div class="l-row second-footer">
+		<div class="b-row b-table-row b-fixed">
+			<div class="b-column three medium-four small-twelve g-text-top">
+								<ul class="zus-list">
+										<li>
+						<a class="b-icon-before-xsmall-arrow-right strong" href="https://www.zus.pl/o-zus/zamowienia-publiczne">
+							<span>Zamówienia publiczne</span>
+						</a>
+					</li>
+										<li>
+						<a class="b-icon-before-xsmall-arrow-right strong" href="https://www.zus.pl/o-zus/praca-w-zus">
+							<span>Praca w ZUS</span>
+						</a>
+					</li>
+										<li>
+						<a class="b-icon-before-xsmall-arrow-right strong" href="https://www.zus.pl/o-zus/kalendarium/szkolenia">
+							<span>Szkolenia</span>
+						</a>
+					</li>
+										<li>
+						<a class="b-icon-before-xsmall-arrow-right strong" href="https://www.zus.pl/mapa-serwisu">
+							<span>Mapa serwisu</span>
+						</a>
+					</li>
+										<li>
+						<a class="b-icon-before-xsmall-arrow-right strong" href="https://www.zus.pl/inne-serwisy">
+							<span>Inne serwisy</span>
+						</a>
+					</li>
+										<li>
+						<a class="b-icon-before-xsmall-arrow-right strong" href="https://www.zus.pl/wipanorama">
+							<span>Wirtualny inspektorat</span>
+						</a>
+					</li>
+									</ul>
+							</div>
+			<div class="b-column nine medium-eight small-twelve zus-footer__information g-text-top">
+				<div class="b-row">
+					<div class="b-column nine">
+												<ul class="zus-list-horizontal zus-footer__list">
+														<li>
+								<a class="b-icon-before-large-rss strong" href="https://www.zus.pl/kanal-rss">
+									<span>Kanał <br>RSS</span>
+								</a>
+							</li>
+														<li>
+								<a class="b-icon-before-large-wcag strong" href="https://www.zus.pl/oswiadczenia-o-dostepnosci">
+									<span>Dostępność dla osób <br>niepełnosprawnych</span>
+								</a>
+							</li>
+														<li>
+								<a class="b-icon-before-large-youtube strong" href="https://www.youtube.com/user/ElektronicznyZUS">
+									<span>Kanał ZUS <br>w serwisie YouTube</span>
+								</a>
+							</li>
+													</ul>
+											</div>
+					<div class="b-column three">
+                        <a class="strong g-right scroll-to-top" href="#">
+                            <span class="link__arrow b-icon-after-large-arrow-circle-up">Do góry</span>
+                        </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="browser" class="l-full-row zus-cookies js-mod " style="display: none;">
+  <div class="l-row">
+    <div class="b-row b-collapse-both">
+      <div class="b-column twelve">
+        <div class="portlet-custom zus-form-sended ">
+          <div class="form-sended__wrapper">
+            <div class="form-sended__message">
+              <div class="b-row">
+                <div class="b-column eleven">
+                  <div class="zus-cms zus-cms-small-text">							
+                    <p>Ze względu na <b>brak wsparcia</b> firmy Microsoft dla przeglądarki <b>Internet Explorer (IE)</b>, niektóre funkcje portalu mogą nie działać prawidłowo.<br/><br/>Skorzystaj z innych przeglądarek.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cookies__buttons g-text-right">
+            <p>
+              <a href="#" class="cookies__close strong b-icon-after-large-cancel" onclick="document.getElementById( 'browser' ).style.display='none';"> Zamknij <span class="acc-hide">informację o przeglądarce</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  if( riu.sprawdzPrzegladarke() === false ) {
+
+    document.getElementById( "browser" ).style.display = "block";
+  }
+</script>
+<div id="cookies" class="l-full-row zus-cookies js-mod hidden">
+    <div class="l-row">
+        <div class="b-row b-collapse-both">
+            <div class="b-column twelve">
+                <div class="portlet-custom zus-form-sended ">
+                    <div class="form-sended__wrapper">
+                        <div class="form-sended__message">
+                            <div class="b-row">
+                                <div class="b-column nine">
+                                    <div class="zus-cms zus-cms-small-text">
+                                        <p>
+                                            Korzystamy z plików cookies i umożliwiamy zamieszczanie ich osobom trzecim. Pliki cookie pozwalają na poznanie twoich preferencji na podstawie zachowań w serwisie. Uznajemy, że jeżeli kontynuujesz korzystanie z serwisu, wyrażasz na to zgodę.                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cookies__buttons g-text-right">
+                        <p>
+                            <a href="#" class="cookies__close strong b-icon-after-large-cancel">
+Zamknij <span class="acc-hide">informację o ciasteczkach</span>                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        </div>
+    </div>
+    <script type="text/javascript">
+        window["font-resizer--font-resizer"] = {
+            linkSelector : '.fresizer-link',
+            zoomRange: [100, 200],
+            cssClasses: ['', '-200']
+        };
+        window["high-contrast--high-contrast"] = {
+            trigger : '#highContrastMode',
+            highContrastClass: 'zus-high-contrast'
+        };
+      </script>
+
+<script src="/portal/wcag/js/config.js" type="text/javascript" ></script>
+
+<!--[if lt IE 9]>
+    <script src="/portal/wcag/js/lib/require.js" data-main="/portal/wcag/js/app-ie8.js" type="text/javascript" ></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+    <script src="/portal/wcag/js/lib/require.js" data-main="/portal/wcag/js/app.js" type="text/javascript" ></script>
+<!--<![endif]-->   </body>
+</html>
